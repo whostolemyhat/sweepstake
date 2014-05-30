@@ -3,10 +3,13 @@ var app = app || {};
 app.TeamCollectionView = Backbone.View.extend({
     el: '#teams',
 
-    initialize: function(teams) {
-        console.log('init', teams);
-        this.collection = new app.TeamCollection(teams);
+    initialize: function() {
+        this.collection = new app.TeamCollection();
+        this.collection.fetch({ reset: true });
         this.render();
+
+        this.listenTo( this.collection, 'add', this.renderTeam );
+        this.listenTo( this.collection, 'reset', this.render );
     },
 
     render: function() {
@@ -23,5 +26,22 @@ app.TeamCollectionView = Backbone.View.extend({
         });
 
         this.$el.append(teamView.render().el);
+    },
+
+    events: {
+        'click #save': 'addTeam'
+    },
+
+    addTeam: function(e) {
+        e.preventDefault();
+
+        var formData = {};
+        $('#addTeam input[type="text"]').each(function(index, el) {
+            if($(el).val() !== '') {
+                formData[el.id] = $(el).val();
+            }
+        });
+
+        this.collection.create(new app.Team(formData));
     }
 });

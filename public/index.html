@@ -19,8 +19,22 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <main class="main">
-            <p>Hello world! This is HTML5 Boilerplate.</p>
-            <div id="teams"></div>
+
+            <div id="teams">
+                
+                <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam">
+                    <h3>Add new team</h3>
+                    <label for="name"></label>
+                    <input type="text" name="name" placeholder="Team name" id="name">
+
+                    <label for="person"></label>
+                    <input type="text" name="person" placeholder="Name of person" id="person">
+                    
+                    <input type="submit" value="Save" id="save">
+                </form>
+
+
+            </div>
         </main>
     
 
@@ -28,6 +42,21 @@
             <img src="<%= img %>">
             <h2><%= name %></h2>
             <p><%= person %></p>
+            <a href="#" class="remove">delete</a>
+            <a href="#" class="edit">edit</a>
+        </script>
+    
+        <script type="text/template" id="editTemplate">
+            <form action="/teams/<%= id %>" method="put">
+                <!-- <input type="file" name="img" id="img" value="<%= img %>"> -->
+                <input type="text" name="name" id="name" value="<%= name %>" placeholder="Team name">
+                <input type="text" name="person" id="person" value="<%= person %>" placeholder="Person">
+                <input type="checkbox" name="active" id="active" <% if(active) { %> checked="checked" <% } %>>
+                <input type="text" name="position" id="position" value="<%= position %>" placeholder="Final position">
+                
+                <button class="save">Save</button>
+                <button class="cancel">Cancel</button>
+            </form>
         </script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
