@@ -1,7 +1,14 @@
 {
-  "name": "app-template",
+  "name": "world-cup-sweepstake",
   "author": "James Tease @whostolemyhat",
   "version": "0.0.1",
+  "description": "Visualisation of Rockpool's World Cup sweepstake",
+  "private": true,
+
+  "scripts": {
+    "start": "node server.js"
+  },
+
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.3",
@@ -13,5 +20,12 @@
     "grunt-contrib-uglify": "~0.3.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-sass": "~0.7.2"
+  },
+
+  "dependencies": {
+      "express": "~4.0.0",
+      "mongoose": "~3.6.13",
+      "body-parser": "~1.0.1",
+      "jade": "*"
   }
 }
