@@ -36,7 +36,7 @@ app.TeamCollectionView = Backbone.View.extend({
         e.preventDefault();
 
         var formData = {};
-        $('#addTeam input[type="text"]').each(function(index, el) {
+        $('#addTeam input').not('[type="submit"]').each(function(index, el) {
             if($(el).val() !== '') {
                 formData[el.id] = $(el).val();
             }

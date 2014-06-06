@@ -2,11 +2,16 @@ var app = app || {};
 
 app.Team = Backbone.Model.extend({
     defaults: {
-        name: 'test',
-        person: 'testsetes',
+        name: '',
+        person: '',
         active: true,
-        position: '',
-        img: ''
+        position: 0,
+        img: '',
+        goalsFor: 0,
+        goalsAgainst: 0,
+        yellowCards: 0,
+        redCards: 0,
+        group: ''
     },
 
     parse: function(response) {

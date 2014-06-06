@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-        app: 'app', // path to app files
+        app: './public', // path to app files
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {

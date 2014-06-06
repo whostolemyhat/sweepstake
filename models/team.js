@@ -6,7 +6,12 @@ var TeamSchema = new Schema({
     person: String,
     active: Boolean,
     position: Number,
-    img: String
+    img: String,
+    goalsFor: Number,
+    goalsAgainst: Number,
+    redCards: Number,
+    yellowCards: Number,
+    group: String
 });
 
 module.exports = mongoose.model('Team', TeamSchema);

@@ -41,10 +41,20 @@ app.TeamView = Backbone.View.extend({
             if(el.id === 'active') {
                 el.value = $(el).is(':checked');
             }
-            formData[el.id] = $(el).val();
+            if($(el).attr('type') === 'number') {
+                console.log(el.id);
+                
+                formData[el.id] = parseInt($(el).val(), 10);
+            } else {
+                formData[el.id] = $(el).val();
+            }
         });
 
+        console.log(formData);
+
         this.model.set(formData);
+        console.log(this.model);
+        
         this.model.save();
         this.render();
     },

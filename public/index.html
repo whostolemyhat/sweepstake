@@ -24,11 +24,14 @@
                 
                 <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam">
                     <h3>Add new team</h3>
-                    <label for="name"></label>
+                    <label for="name">Team name</label>
                     <input type="text" name="name" placeholder="Team name" id="name">
 
-                    <label for="person"></label>
+                    <label for="person">Person</label>
                     <input type="text" name="person" placeholder="Name of person" id="person">
+
+                    <label for="group">Group name</label>
+                    <input type="text" name="group" id="group" placeholder="Group">
                     
                     <input type="submit" value="Save" id="save">
                 </form>
@@ -39,9 +42,12 @@
     
 
         <script type="text/template" id="teamTemplate">
-            <img src="<%= img %>">
-            <h2><%= name %></h2>
-            <p><%= person %></p>
+            <!-- <img src="<%= img %>"> -->
+            <h2><%= name %> (<%= person %>)</h2>
+            <p class="group">Group <%= group %></p>
+            <p class="goal-difference"><strong>Goal difference:</strong> <%= goalsFor - goalsAgainst %></p>
+            <p class="cards"><strong>Number of cards:</strong> <%= yellowCards + redCards %></p>
+
             <a href="#" class="remove">delete</a>
             <a href="#" class="edit">edit</a>
         </script>
@@ -49,10 +55,32 @@
         <script type="text/template" id="editTemplate">
             <form action="/teams/<%= id %>" method="put">
                 <!-- <input type="file" name="img" id="img" value="<%= img %>"> -->
+                <label for="name">Name</label>
                 <input type="text" name="name" id="name" value="<%= name %>" placeholder="Team name">
+
+                <label for="group">Group</label>
+                <input type="text" name="group" id="group" value="<%= group %>" placeholder="Group">
+
+                <label for="person">Person</label>
                 <input type="text" name="person" id="person" value="<%= person %>" placeholder="Person">
-                <input type="checkbox" name="active" id="active" <% if(active) { %> checked="checked" <% } %>>
+
+                <label for="active">Still in the competition?</label>
+                <input type="checkbox" name="active" id="active" <% if(active) { %> checked="checked" <% } %>><%= active %>
+
+                <label for="position">Final postion</label>
                 <input type="text" name="position" id="position" value="<%= position %>" placeholder="Final position">
+
+                <label for="yellows">Yellow cards</label>
+                <input type="number" name="yellows" id="yellowCards" value="<%= yellowCards %>" placeholder="Number of yellow cards" min="0">
+
+                <label for="reds">Red cards</label>
+                <input type="number" name="reds" id="redCards" value="<%= redCards %>" placeholder="Number of red cards" min="0">
+
+                <label for="goals-for">Goals scored</label>
+                <input type="number" name="goals-for" id="goalsFor" value="<%= goalsFor %>" placeholder="Goals scored" min="0">
+
+                <label for="goals-against">Goals conceded</label>
+                <input type="number" id="goalsAgainst" name="goals-against" value="<%= goalsAgainst %>" placeholder="Goals conceded" min="0">
                 
                 <button class="save">Save</button>
                 <button class="cancel">Cancel</button>

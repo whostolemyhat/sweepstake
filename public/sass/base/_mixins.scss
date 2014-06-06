@@ -171,3 +171,8 @@
     #{$property}: $px-values;
     #{$property}: $rem-values;
 }
+
+%grid {
+  max-width: 1200px;
+  margin: auto;
+}

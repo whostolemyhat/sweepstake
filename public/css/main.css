@@ -454,6 +454,11 @@ table {
    ========================================================================== */
 /* Rem Fallbacks
    ========================================================================== */
+/* line 175, ../sass/base/_mixins.scss */
+.main {
+  max-width: 1200px;
+  margin: auto; }
+
 /* Helpers */
 /*
  * Clearfix: contain floats
@@ -578,3 +583,16 @@ a:focus {
 /* line 86, ../sass/modules/_typography.scss */
 a:active {
   color: #000088; }
+
+/* line 1, ../sass/modules/_forms.scss */
+label {
+  display: block; }
+
+/* line 5, ../sass/modules/_forms.scss */
+[type="text"],
+textarea {
+  width: 100%; }
+
+/* line 1, ../sass/modules/_teams.scss */
+.team {
+  border-top: 1px dotted #e1e1e1; }
