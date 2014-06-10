@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "Visualisation of Rockpool's World Cup sweepstake",
   "private": true,
+  "main": "server.js",
 
   "scripts": {
     "start": "node server.js"

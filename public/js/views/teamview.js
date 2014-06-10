@@ -26,7 +26,9 @@ app.TeamView = Backbone.View.extend({
         this.remove();
     },
 
-    editTeam: function() {
+    editTeam: function(e) {
+        e.preventDefault();
+        
         this.$el.html(this.editTemplate(this.model.toJSON()));
     },
 
