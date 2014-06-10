@@ -1,3 +1,39 @@
 .team {
+    @extend %clearfix;
     border-top: 1px dotted #e1e1e1;
+}
+
+.row-header {
+    @extend %clearfix;
+    font-weight: bold;
+
+    .group {
+        text-transform: none;
+    }
+}
+
+.col {
+    display: inline-block;
+    float: left;
+    padding: 0.25rem 0.5rem;
+    width: 16%;
+}
+
+.team-name {
+    width: 20%;
+}
+
+.person {
+    width: 18%;
+}
+
+.group {
+    text-transform: uppercase;
+}
+
+.group,
+.cards,
+.goal-difference {
+    width: 7%;
+    text-align: center;
 }

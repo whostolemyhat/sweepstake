@@ -452,6 +452,14 @@ table {
    ========================================================================== */
 /* Helpers
    ========================================================================== */
+/* line 103, ../sass/base/_mixins.scss */
+.team:before, .row-header:before, .team:after, .row-header:after {
+  content: "";
+  display: table; }
+/* line 108, ../sass/base/_mixins.scss */
+.team:after, .row-header:after {
+  clear: both; }
+
 /* Rem Fallbacks
    ========================================================================== */
 /* line 175, ../sass/base/_mixins.scss */
@@ -591,8 +599,61 @@ label {
 /* line 5, ../sass/modules/_forms.scss */
 [type="text"],
 textarea {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 0.5rem;
+  display: block; }
+
+/* line 12, ../sass/modules/_forms.scss */
+form {
+  width: 60%;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 1rem; }
+
+/* line 18, ../sass/modules/_forms.scss */
+[type="submit"],
+.save,
+.cancel {
+  margin: 1rem 0.5rem 1rem 0;
+  display: inline-block; }
+
+/* line 25, ../sass/modules/_forms.scss */
+[type="number"] {
+  display: block;
+  margin-bottom: 0.5rem; }
 
 /* line 1, ../sass/modules/_teams.scss */
 .team {
   border-top: 1px dotted #e1e1e1; }
+
+/* line 6, ../sass/modules/_teams.scss */
+.row-header {
+  font-weight: bold; }
+  /* line 10, ../sass/modules/_teams.scss */
+  .row-header .group {
+    text-transform: none; }
+
+/* line 15, ../sass/modules/_teams.scss */
+.col {
+  display: inline-block;
+  float: left;
+  padding: 0.25rem 0.5rem;
+  width: 16%; }
+
+/* line 22, ../sass/modules/_teams.scss */
+.team-name {
+  width: 20%; }
+
+/* line 26, ../sass/modules/_teams.scss */
+.person {
+  width: 18%; }
+
+/* line 30, ../sass/modules/_teams.scss */
+.group {
+  text-transform: uppercase; }
+
+/* line 34, ../sass/modules/_teams.scss */
+.group,
+.cards,
+.goal-difference {
+  width: 7%;
+  text-align: center; }

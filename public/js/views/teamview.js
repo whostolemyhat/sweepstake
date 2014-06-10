@@ -36,24 +36,20 @@ app.TeamView = Backbone.View.extend({
         var formData = {};
         // var prev = this.model.previousAttributes();
 
-        $(e.target).closest('form').find('input').each(function() {
+        $(e.target).closest('form').find('input, select').each(function() {
             var el = this;
             if(el.id === 'active') {
-                el.value = $(el).is(':checked');
+                // el.value = $(el).is(':checked');
+                console.log(el.value);
             }
             if($(el).attr('type') === 'number') {
-                console.log(el.id);
-                
                 formData[el.id] = parseInt($(el).val(), 10);
             } else {
                 formData[el.id] = $(el).val();
             }
         });
 
-        console.log(formData);
-
         this.model.set(formData);
-        console.log(this.model);
         
         this.model.save();
         this.render();
@@ -65,3 +61,4 @@ app.TeamView = Backbone.View.extend({
         this.render();
     }
 });
+

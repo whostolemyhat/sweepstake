@@ -5,4 +5,24 @@ label {
 [type="text"],
 textarea {
     width: 100%;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+form {
+    width: 60%;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 1rem;
+}
+
+[type="submit"],
+.save,
+.cancel {
+    margin: 1rem 0.5rem 1rem 0;
+    display: inline-block;
+}
+
+[type="number"] {
+    display: block;
+    margin-bottom: 0.5rem;
 }

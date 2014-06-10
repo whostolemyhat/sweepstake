@@ -19,10 +19,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <main class="main">
-
+            
             <div id="teams">
                 
-                <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam">
+                <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam" class="add-team">
                     <h3>Add new team</h3>
                     <label for="name">Team name</label>
                     <input type="text" name="name" placeholder="Team name" id="name">
@@ -36,6 +36,27 @@
                     <input type="submit" value="Save" id="save">
                 </form>
 
+                <p>Sort by:
+                    <select name="" id="">
+                        <option value="">position</option>
+                        <option value="">team</option>
+                        <option value="">person</option>
+                        <option value="">goal difference</option>
+                        <option value="">total cards</option>
+                    </select>
+
+                    <span class="sort-team">team</span>
+                    <span class="sort-group">group</span>
+                </p>
+
+                <div class="row-header">
+                    <div class="team-name col">Team</div>
+                    <div class="person col">Person</div>
+                    <div class="group col">Group</div>
+                    <div class="goal-difference col">Goal diff</div>
+                    <div class="cards col">Card total</div>
+                    <div class="controls col"></div>
+                </div>
 
             </div>
         </main>
@@ -43,13 +64,16 @@
 
         <script type="text/template" id="teamTemplate">
             <!-- <img src="<%= img %>"> -->
-            <h2><%= name %> (<%= person %>)</h2>
-            <p class="group">Group <%= group %></p>
-            <p class="goal-difference"><strong>Goal difference:</strong> <%= goalsFor - goalsAgainst %></p>
-            <p class="cards"><strong>Number of cards:</strong> <%= yellowCards + redCards %></p>
+            <div class="team-name col"><%= name %></div>
+            <div class="person col"><%= person %></div>
+            <div class="group col"><%= group %></div>
+            <div class="goal-difference col"><%= goalsFor - goalsAgainst %></div>
+            <div class="cards col"><%= yellowCards + redCards %></div>
 
-            <a href="#" class="remove">delete</a>
-            <a href="#" class="edit">edit</a>
+            <div class="controls col">
+                <a href="#" class="remove">delete</a>
+                <a href="#" class="edit">edit</a>
+            </div>
         </script>
     
         <script type="text/template" id="editTemplate">
@@ -65,7 +89,12 @@
                 <input type="text" name="person" id="person" value="<%= person %>" placeholder="Person">
 
                 <label for="active">Still in the competition?</label>
-                <input type="checkbox" name="active" id="active" <% if(active) { %> checked="checked" <% } %>><%= active %>
+                <!-- <input type="checkbox" name="active" id="active" <% if(active === 'true') { %> checked="checked" <% } %>><%= active %> -->
+                <%=active%>
+                <select name="active" id="active">
+                    <option value="true" <% if(active === true) { %> selected="selected" <% } %>>Yes</option>
+                    <option value="false" <% if(!active === false) { %> selected="selected" <% } %>>No</option>
+                </select>
 
                 <label for="position">Final postion</label>
                 <input type="text" name="position" id="position" value="<%= position %>" placeholder="Final position">

@@ -9,7 +9,7 @@ app.TeamCollectionView = Backbone.View.extend({
         this.render();
 
         this.listenTo( this.collection, 'add', this.renderTeam );
-        this.listenTo( this.collection, 'reset', this.render );
+        this.listenTo( this.collection, 'sort reset', this.render );
     },
 
     render: function() {
@@ -29,7 +29,9 @@ app.TeamCollectionView = Backbone.View.extend({
     },
 
     events: {
-        'click #save': 'addTeam'
+        'click #save': 'addTeam',
+        'click .sort-team': 'sortTeam',
+        'click .sort-group': 'sortByGroup'
     },
 
     addTeam: function(e) {
@@ -43,5 +45,13 @@ app.TeamCollectionView = Backbone.View.extend({
         });
 
         this.collection.create(new app.Team(formData));
+    },
+
+    sortTeam: function() {
+        this.collection.sortBy('name');
+    },
+
+    sortByGroup: function() {
+        this.collection.sortBy('group');
     }
 });
