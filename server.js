@@ -81,8 +81,10 @@ router.route('/teams/:team_id')
             team.img = req.body.img;
             team.goalsFor = req.body.goalsFor;
             team.goalsAgainst = req.body.goalsAgainst;
+            team.goalDifference = req.body.goalDifference;
             team.yellowCards = req.body.yellowCards;
             team.redCards = req.body.redCards;
+            team.totalCards = req.body.totalCards;
             team.group = req.body.group;
 
             team.save(function(err) {

@@ -5,13 +5,17 @@ app.TeamCollection = Backbone.Collection.extend({
     url: '/api/teams',
 
     initialize: function() {
-        this.sortKey = 'id';
+        this.sortKey = 'name';
     },
 
     comparator: function(a, b) {
         a = a.get(this.sortKey);
         b = b.get(this.sortKey);
 
+        if(this.sortKey === 'goalDifference') {
+            // want higher goal diff at top
+            return a > b ? -1 : a < b ? 1 : 0;
+        }
         return a > b ? 1 : a < b ? -1 : 0;
     },
 

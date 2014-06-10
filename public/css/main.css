@@ -629,31 +629,51 @@ form {
 .row-header {
   font-weight: bold; }
   /* line 10, ../sass/modules/_teams.scss */
-  .row-header .group {
-    text-transform: none; }
+  .row-header .group,
+  .row-header .cards,
+  .row-header .goal-difference {
+    text-transform: none;
+    text-align: left; }
 
-/* line 15, ../sass/modules/_teams.scss */
+/* line 18, ../sass/modules/_teams.scss */
 .col {
   display: inline-block;
   float: left;
   padding: 0.25rem 0.5rem;
   width: 16%; }
 
-/* line 22, ../sass/modules/_teams.scss */
+/* line 25, ../sass/modules/_teams.scss */
 .team-name {
   width: 20%; }
 
-/* line 26, ../sass/modules/_teams.scss */
+/* line 29, ../sass/modules/_teams.scss */
 .person {
   width: 18%; }
 
-/* line 30, ../sass/modules/_teams.scss */
+/* line 33, ../sass/modules/_teams.scss */
 .group {
   text-transform: uppercase; }
 
-/* line 34, ../sass/modules/_teams.scss */
+/* line 37, ../sass/modules/_teams.scss */
 .group,
 .cards,
 .goal-difference {
-  width: 7%;
-  text-align: center; }
+  width: 8%; }
+
+/* line 44, ../sass/modules/_teams.scss */
+[data-sort] {
+  cursor: pointer; }
+  /* line 50, ../sass/modules/_teams.scss */
+  [data-sort]:hover:after {
+    content: '\25BE';
+    margin-left: 0.25rem;
+    text-decoration: none; }
+
+/* line 59, ../sass/modules/_teams.scss */
+.sort-active:after {
+  content: '\25BE';
+  margin-left: 0.25rem; }
+
+/* line 65, ../sass/modules/_teams.scss */
+.remove {
+  margin-left: 1rem; }

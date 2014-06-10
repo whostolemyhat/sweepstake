@@ -9,8 +9,10 @@ var TeamSchema = new Schema({
     img: String,
     goalsFor: Number,
     goalsAgainst: Number,
+    goalDifference: Number,
     redCards: Number,
     yellowCards: Number,
+    totalCards: Number,
     group: String
 });
 

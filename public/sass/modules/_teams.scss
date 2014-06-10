@@ -7,8 +7,11 @@
     @extend %clearfix;
     font-weight: bold;
 
-    .group {
+    .group,
+    .cards,
+    .goal-difference {
         text-transform: none;
+        text-align: left;
     }
 }
 
@@ -34,6 +37,31 @@
 .group,
 .cards,
 .goal-difference {
-    width: 7%;
-    text-align: center;
+    width: 8%;
+    // text-align: center;
+}
+
+[data-sort] {
+    cursor: pointer;
+
+    &:hover {
+        // text-decoration: underline;
+
+        &:after {
+            content: '\25BE';
+            margin-left: 0.25rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.sort-active {
+    &:after {
+        content: '\25BE';
+        margin-left: 0.25rem;
+    }
+}
+
+.remove {
+    margin-left: 1rem;
 }

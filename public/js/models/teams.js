@@ -9,8 +9,10 @@ app.Team = Backbone.Model.extend({
         img: '',
         goalsFor: 0,
         goalsAgainst: 0,
+        goalDifference: 0,
         yellowCards: 0,
         redCards: 0,
+        totalCards: 0,
         group: ''
     },
 

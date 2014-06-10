@@ -36,25 +36,12 @@
                     <input type="submit" value="Save" id="save">
                 </form>
 
-                <p>Sort by:
-                    <select name="" id="">
-                        <option value="">position</option>
-                        <option value="">team</option>
-                        <option value="">person</option>
-                        <option value="">goal difference</option>
-                        <option value="">total cards</option>
-                    </select>
-
-                    <span class="sort-team">team</span>
-                    <span class="sort-group">group</span>
-                </p>
-
                 <div class="row-header">
-                    <div class="team-name col">Team</div>
-                    <div class="person col">Person</div>
-                    <div class="group col">Group</div>
-                    <div class="goal-difference col">Goal diff</div>
-                    <div class="cards col">Card total</div>
+                    <div class="team-name col sort-active" data-sort="name">Team</div>
+                    <div class="person col" data-sort="person">Person</div>
+                    <div class="group col" data-sort="group">Group</div>
+                    <div class="goal-difference col" data-sort="goalDifference">Goal diff</div>
+                    <div class="cards col" data-sort="totalCards">Card total</div>
                     <div class="controls col"></div>
                 </div>
 
@@ -71,8 +58,8 @@
             <div class="cards col"><%= yellowCards + redCards %></div>
 
             <div class="controls col">
-                <a href="#" class="remove">delete</a>
                 <a href="#" class="edit">edit</a>
+                <a href="#" class="remove">delete</a>
             </div>
         </script>
     

@@ -38,16 +38,22 @@ app.TeamView = Backbone.View.extend({
 
         $(e.target).closest('form').find('input, select').each(function() {
             var el = this;
-            if(el.id === 'active') {
-                // el.value = $(el).is(':checked');
-                console.log(el.value);
-            }
+            // if(el.id === 'active') {
+            //     // el.value = $(el).is(':checked');
+            //     console.log(el.value);
+            //     el.value 
+            // }
             if($(el).attr('type') === 'number') {
                 formData[el.id] = parseInt($(el).val(), 10);
             } else {
                 formData[el.id] = $(el).val();
             }
         });
+
+        formData.goalDifference = formData.goalsFor - formData.goalsAgainst;
+        formData.totalCards = formData.yellowCards - formData.redCards;
+
+        console.log(formData);
 
         this.model.set(formData);
         
