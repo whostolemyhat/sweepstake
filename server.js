@@ -42,6 +42,7 @@ router.route('/teams')
         team.active = req.body.active;
         team.position = req.body.position;
         team.img = req.body.img;
+        team.group = req.body.group;
 
         team.save(function(err) {
             if(err) {
