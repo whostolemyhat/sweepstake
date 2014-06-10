@@ -8,9 +8,12 @@ app.use(express.static(__dirname + '/public'));
 
 // database
 // mongoose.connect('mongodb://localhost/worldcup');
-var database = JSON.parse('./conf/config.json');
 
-mongoose.connect('mongodb://' + database.username + ':' + database.password + '@kahana.mongohq.com:10041/worldcup');
+var username = process.env.username || '';
+var password = process.env.password || '';
+
+mongoose.connect('mongodb://' + username + ':' + password + '@kahana.mongohq.com:10041/worldcup');
+
 var Team = require('./models/team');
 
 app.use(bodyParser());
