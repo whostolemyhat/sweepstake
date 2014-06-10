@@ -663,17 +663,17 @@ form {
 /* line 44, ../sass/modules/_teams.scss */
 [data-sort] {
   cursor: pointer; }
-  /* line 50, ../sass/modules/_teams.scss */
+  /* line 48, ../sass/modules/_teams.scss */
   [data-sort]:hover:after {
     content: '\25BE';
     margin-left: 0.25rem;
     text-decoration: none; }
 
-/* line 59, ../sass/modules/_teams.scss */
+/* line 57, ../sass/modules/_teams.scss */
 .sort-active:after {
   content: '\25BE';
   margin-left: 0.25rem; }
 
-/* line 65, ../sass/modules/_teams.scss */
+/* line 63, ../sass/modules/_teams.scss */
 .remove {
   margin-left: 1rem; }

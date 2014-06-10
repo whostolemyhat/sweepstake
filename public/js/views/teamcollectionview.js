@@ -44,6 +44,7 @@ app.TeamCollectionView = Backbone.View.extend({
         });
 
         this.collection.create(new app.Team(formData));
+        $('#addTeam').find('[type="text"]').val('');
     },
 
     sortBy: function(e) {
@@ -51,11 +52,21 @@ app.TeamCollectionView = Backbone.View.extend({
         var target = $(e.target);
         var key = target.data('sort');
 
-        $('.sort-active').removeClass('sort-active');
-        target.addClass('sort-active');
+        if(target.hasClass('sort-active')) {
+            // reverse sort order
+            if(target.data('sort-order') === 'asc') {
+                target.data('sort-order', 'desc');
+            } else {
+                target.data('sort-order', 'asc');
+            }
+        } else {
+            $('.sort-active').removeClass('sort-active');
+            target.addClass('sort-active');
+        }
+        var order = target.data('sort-order');
 
         if(key) {
-            this.collection.sortBy(key);
+            this.collection.sortBy(key, order);
         }
     }
 });

@@ -45,8 +45,6 @@
     cursor: pointer;
 
     &:hover {
-        // text-decoration: underline;
-
         &:after {
             content: '\25BE';
             margin-left: 0.25rem;

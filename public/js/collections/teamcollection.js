@@ -12,15 +12,15 @@ app.TeamCollection = Backbone.Collection.extend({
         a = a.get(this.sortKey);
         b = b.get(this.sortKey);
 
-        if(this.sortKey === 'goalDifference') {
-            // want higher goal diff at top
+        if(this.sortOrder === 'desc') {
             return a > b ? -1 : a < b ? 1 : 0;
         }
         return a > b ? 1 : a < b ? -1 : 0;
     },
 
-    sortBy: function(key) {
+    sortBy: function(key, order) {
         this.sortKey = key;
+        this.sortOrder = order;
         this.sort();
     }
 });
