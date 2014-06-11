@@ -43,7 +43,7 @@
     height: 750px;
     background: url('/img/light-ray.png') center center no-repeat transparent;
     z-index: -1;
-    @include animation('header-rotate 150s infinite');
+    @include animation('header-rotate 150s infinite linear');
 }
 
 @include keyframes(header-rotate) {

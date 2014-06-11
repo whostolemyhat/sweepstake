@@ -11,6 +11,11 @@
 .admin-notification {
     background: #8a0d2d;
     padding: 1.5rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 
     h2 {
         color: white;
