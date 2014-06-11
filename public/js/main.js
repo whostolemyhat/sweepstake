@@ -1,3 +1,7 @@
 $(document).ready(function() {
-    console.log('Running jQuery version', $.fn.jquery);
+    $('.admin-toggle').click(function(e) {
+        e.preventDefault();
+
+        $('body').toggleClass('show-admin');
+    });
 });

@@ -1,17 +1,21 @@
 /* Colours */
 
-$colorPrimary: pink;
-$colorSecondary: orange;
+$spanishWhite: #f7efe0;
+$kabul: #5d4e48;
+$matrix: #b85b5a;
+$scorpion: #5a5a5a;
+$ebonyClay: #252d37;
+$casablanca: #faaf4c;
 
 /* Typography  */
 
 $baseFontSize: 16; // No px on this
 $baseLineHeight: 25px; 
 $baseFontFamily: Arial, Helvetica, sans-serif;
-$baseFontColor: #222;
+$baseFontColor: $scorpion;
 
-$headingFontFamily: Arial, Helvetica, sans-serif; 
-$headingColor: #222;
+$headingFontFamily: Georgia, "Times New Roman", serif; 
+$headingColor: $scorpion;
 
 $headingAlpha:                  32px;
 $headingBeta:                   24px;
@@ -21,8 +25,10 @@ $headingEpsilon:                13px;
 $headingZeta:                   11px;
 
 /* Links  */
-$linkColor: #00e;
+$linkColor: $matrix;
 $linkVisited: lighten($linkColor, 10);
 $linkHover: darken($linkColor, 20);
 $linkActive: darken($linkColor, 20);
 $linkFocus: darken($linkColor, 40);
+
+$borderColour: $kabul;

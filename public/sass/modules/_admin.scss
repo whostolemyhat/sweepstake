@@ -1,0 +1,24 @@
+.admin {
+    display: none;
+}
+
+.show-admin {
+    .admin {
+        display: block;
+    }
+}
+
+.admin-notification {
+    background: #8a0d2d;
+    padding: 1.5rem 0;
+
+    h2 {
+        color: white;
+    }
+}
+
+.admin-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}

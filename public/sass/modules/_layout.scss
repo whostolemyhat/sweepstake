@@ -1,3 +1,16 @@
-.main {
+*{
+    box-sizing: border-box;
+}
+
+.main,
+.grid {
     @extend %grid;
+}
+
+.main {
+    margin-top: 2rem;
+}
+
+body {
+    background: $spanishWhite;
 }

@@ -1,0 +1,56 @@
+.header {
+    padding: 1rem;
+    background: $ebonyClay;
+    color: $spanishWhite;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header-container {
+    z-index: 10;
+    @extend %grid;
+}
+
+.heading {
+    background: $casablanca;
+    width: 230px;
+    height: 230px;
+    padding-top: 80px;
+    line-height: 1;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px dotted $ebonyClay;
+    color: white;
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        border-radius: 25%;
+        background: lighten($casablanca, 5%);
+        box-shadow: 0 0 18px 0 lighten($casablanca, 5%);
+        color: $ebonyClay;
+    }
+}
+
+.header-image {
+    position: absolute;
+    left: 0;
+    top: -250px;
+    width: 100%;
+    height: 750px;
+    background: url('/img/light-ray.png') center center no-repeat transparent;
+    z-index: -1;
+    @include animation('header-rotate 150s infinite');
+}
+
+@include keyframes(header-rotate) {
+    from {
+        @include transform(rotate(0deg));
+    }
+    to {
+        @include transform(rotate(360deg));
+    }
+}

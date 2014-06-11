@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: $ebonyClay;
+    color: $spanishWhite;
+
+    h3 {
+        color: $spanishWhite;
+    }
+}
+
+.footer-container {
+    @extend %grid;    
+}

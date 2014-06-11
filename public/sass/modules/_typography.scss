@@ -16,6 +16,7 @@ textarea {
 
 body {
     @include px('line-height', $baseLineHeight);
+    color: $scorpion;
 }
 
 /* Headings

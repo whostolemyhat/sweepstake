@@ -1,6 +1,48 @@
 .team {
     @extend %clearfix;
-    border-top: 1px dotted #e1e1e1;
+    border-top: 1px dotted $borderColour;
+    
+    &:hover {
+        background: lighten($spanishWhite, 20%);
+    }
+}
+.team,
+.row-header {
+    width: 850px;
+    margin: auto;
+}
+
+.show-admin {
+    .team,
+    .row-header {
+        width: 100%;
+    }
+
+    .team-name {
+        width: 24%;
+    }
+
+    .person {
+        width: 21%;
+    }
+
+    .controls {
+        width: 14%;
+    }
+
+    .group,
+    .cards,
+    .goal-difference {
+        width: 11%;
+    }
+
+    .row-header {
+        .group,
+        .cards,
+        .goal-difference {
+            padding-left: 0.5rem;
+        }
+    }
 }
 
 .row-header {
@@ -12,22 +54,27 @@
     .goal-difference {
         text-transform: none;
         text-align: left;
+        padding-left: 1rem;
     }
 }
 
 .col {
     display: inline-block;
     float: left;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem;
     width: 16%;
 }
 
 .team-name {
-    width: 20%;
+    width: 32%;
 }
 
 .person {
-    width: 18%;
+    width: 26%;
+}
+
+.controls {
+    float: right;
 }
 
 .group {
@@ -37,8 +84,8 @@
 .group,
 .cards,
 .goal-difference {
-    width: 8%;
-    // text-align: center;
+    width: 14%;
+    text-align: center;
 }
 
 [data-sort] {
