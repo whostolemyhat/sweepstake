@@ -16,7 +16,6 @@ if(env === 'prod') {
     console.log('connecting remote');
     var username = process.env.username || '';
     var password = process.env.password || '';
-    console.log('user: ' + username + password);
     mongoose.connect('mongodb://' + username + ':' + password + '@kahana.mongohq.com:10041/worldcup');
 } else {
     console.log('connecting local');
