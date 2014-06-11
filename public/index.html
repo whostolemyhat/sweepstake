@@ -22,7 +22,7 @@
             
             <div id="teams">
                 
-                <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam" class="add-team">
+                <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam" class="add-team admin">
                     <h3>Add new team</h3>
                     <label for="name">Team name</label>
                     <input type="text" name="name" placeholder="Team name" id="name">
@@ -42,11 +42,20 @@
                     <div class="group col" data-sort="group" data-sort-order="asc">Group</div>
                     <div class="goal-difference col" data-sort="goalDifference" data-sort-order="desc">Goal diff</div>
                     <div class="cards col" data-sort="totalCards" data-sort-order="asc">Card total</div>
-                    <div class="controls col"></div>
+                    <div class="controls col admin"></div>
                 </div>
 
             </div>
         </main>
+
+        <footer class="footer">
+            <h3>About</h3>
+            <p>Built by <a href="http://www.jamestease.co.uk" target="_blank" title="James Tease">James Tease</a> 
+                <a href="http://twitter.com/whostolemyhat" title="Follow me on Twitter" target="_blank">@whostolemyhat</a>.
+                Frontend is built using Backbone, Grunt and SASS; backend REST API uses Express, Node and Mongo. Hosted on
+                Heroku and MongoHQ.</p>
+            <p>Code is on <a href="https://github.com/whostolemyhat/sweepstake" target="_blank" title="View source on Github">Github here</a>.</p>
+        </footer>
     
 
         <script type="text/template" id="teamTemplate">
@@ -57,7 +66,7 @@
             <div class="goal-difference col"><%= goalsFor - goalsAgainst %></div>
             <div class="cards col"><%= yellowCards + redCards %></div>
 
-            <div class="controls col">
+            <div class="controls col admin">
                 <a href="#" class="edit">edit</a>
                 <a href="#" class="remove">delete</a>
             </div>
@@ -110,7 +119,6 @@
         <script src="/js/vendor/backbone-min.js"></script>
 
         <script src="/js/models/teams.js"></script>
-        <!-- // <script src="/js/models/person.js"></script> -->
 
         <script src="/js/collections/teamcollection.js"></script>
         
@@ -123,12 +131,13 @@
 
 
         <script>
-            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            // e.src='//www.google-analytics.com/analytics.js';
-            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            // ga('create','UA-XXXXX-X');ga('send','pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-51825851-1', 'worldcup-sweepstake.herokuapp.com');
+          ga('send', 'pageview');
         </script>
     </body>
 </html>
