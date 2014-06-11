@@ -43,6 +43,15 @@
             padding-left: 0.5rem;
         }
     }
+
+    .team {
+        &:hover {
+            background: transparent;
+        }
+        form {
+            border-bottom: none;
+        }
+    }
 }
 
 .row-header {
