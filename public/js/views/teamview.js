@@ -55,8 +55,6 @@ app.TeamView = Backbone.View.extend({
         formData.goalDifference = formData.goalsFor - formData.goalsAgainst;
         formData.totalCards = formData.yellowCards - formData.redCards;
 
-        console.log(formData);
-
         this.model.set(formData);
         
         this.model.save();
