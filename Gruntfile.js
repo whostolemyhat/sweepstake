@@ -53,11 +53,11 @@ module.exports = function(grunt) {
             },
             prod: {
                 options: {
-                    // outputStyle: 'compressed',
+                    style: 'compressed',
                     lineNumbers: false
                 },
                 files: {
-                    '<%= app %>/build/css/main.css': '<%= app %>/sass/main.scss'
+                    '<%= app %>/css/main.css': '<%= app %>/sass/main.scss'
                 }
             }
         },
@@ -124,5 +124,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['connect:livereload', 'watch']);
     grunt.registerTask('lint', ['jshint', 'csslint:lax']);
-    grunt.registerTask('build', ['jshint', 'clean', 'uglify', 'sass:prod']);
+    grunt.registerTask('build', ['jshint', 'sass:prod']);
 };
