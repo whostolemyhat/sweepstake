@@ -102,6 +102,7 @@ router.route('/teams/:team_id')
             team.redCards = req.body.redCards;
             team.totalCards = req.body.totalCards;
             team.group = req.body.group;
+            team.points = req.body.points;
 
             team.save(function(err) {
                 if(err) {

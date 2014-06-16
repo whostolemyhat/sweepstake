@@ -13,7 +13,8 @@ app.Team = Backbone.Model.extend({
         yellowCards: 0,
         redCards: 0,
         totalCards: 0,
-        group: ''
+        group: '',
+        points: 0
     },
 
     parse: function(response) {

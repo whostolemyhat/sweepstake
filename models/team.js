@@ -13,7 +13,8 @@ var TeamSchema = new Schema({
     redCards: Number,
     yellowCards: Number,
     totalCards: Number,
-    group: String
+    group: String,
+    points: Number
 });
 
 module.exports = mongoose.model('Team', TeamSchema);

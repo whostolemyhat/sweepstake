@@ -1,0 +1,35 @@
+.group-container,
+.group-header {
+
+    div {
+        width: auto;
+        float: left;
+    }
+
+    .col {
+        width: 3rem;
+        text-align: center;
+    }
+
+    .team-name {
+        width: 25%;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .person {
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+
+}
+
+.group-header {
+    font-weight: bold;
+}
+
+.group-heading {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 1rem 0 0;
+}

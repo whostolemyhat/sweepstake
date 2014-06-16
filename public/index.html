@@ -34,6 +34,10 @@
         <main class="main">
             
             <div id="teams">
+                <ul class="view-controls">
+                    <li><a href="#" class="table">Table view</a></li>
+                    <li><a href="#" class="groups">Group view</a></li>
+                </ul>
                 
                 <form action="/teams" method="post" enctype="multipart/form-data" id="addTeam" class="add-team admin">
                     <h3>Add new team</h3>
@@ -88,6 +92,10 @@
                 <a href="#" class="remove">delete</a>
             </div>
         </script>
+
+        <script id="tableHeader" type="text/template">
+            
+        </script>
     
         <script type="text/template" id="editTemplate">
             <form action="/teams/<%= id %>" method="put">
@@ -124,10 +132,33 @@
                 <label for="goals-against">Goals conceded</label>
                 <input type="number" id="goalsAgainst" name="goals-against" value="<%= goalsAgainst %>" placeholder="Goals conceded" min="0">
                 
+                <label for="points">Points total</label>
+                <input type="number" id="points" name="points" value="<%= points %>" placeholder="Points total" min="0">
+
                 <button class="save">Save</button>
                 <button class="cancel">Cancel</button>
             </form>
         </script>
+
+        <script id="groupHeader" type="text/template">
+            <header class="group-header clearfix">
+                <h2 class="group-heading">Group <%= group %></h2>
+                <div class="team-name col">Team</div>
+                <div class="goals-for col">F</div>
+                <div class="goals-against col">A</div>
+                <div class="goal-difference col">GD</div>
+                <div class="points col">Pnts</div>
+                </header>
+        </script>
+
+        <script type="text/template" id="groupTemplate">
+            <div class="team-name col"><%= name %> <span class="person">(<%= person %>)</span></div>
+            <div class="goals-for col"><%= goalsFor %></div>
+            <div class="goals-against col"><%= goalsAgainst %></div>
+            <div class="goal-difference col"><%= goalDifference %></div>
+            <div class="points col"><%= points %></div>
+        </script>
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
@@ -140,6 +171,7 @@
         <script src="/js/collections/teamcollection.js"></script>
         
         <script src="/js/views/teamview.js"></script>
+        <script src="/js/views/groupview.js"></script>
         <script src="/js/views/teamcollectionview.js"></script>
 
         <script src="/js/plugins.js"></script>

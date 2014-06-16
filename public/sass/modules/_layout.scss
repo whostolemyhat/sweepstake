@@ -14,3 +14,15 @@
 body {
     background: $spanishWhite;
 }
+
+.view-controls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    text-align: center;
+
+    li {
+        display: inline-block;
+    }
+}
