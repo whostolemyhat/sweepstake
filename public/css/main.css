@@ -609,13 +609,28 @@ body {
 /* line 18, ../sass/modules/_layout.scss */
 .view-controls {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
   overflow: auto;
   text-align: center; }
   /* line 25, ../sass/modules/_layout.scss */
   .view-controls li {
     display: inline-block; }
+  /* line 29, ../sass/modules/_layout.scss */
+  .view-controls a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    background: #b85b5a;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    /* line 38, ../sass/modules/_layout.scss */
+    .view-controls a:hover, .view-controls a.active {
+      color: #b85b5a;
+      background: white; }
 
 /* line 1, ../sass/modules/_header.scss */
 .header {

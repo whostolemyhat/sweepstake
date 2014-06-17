@@ -25,10 +25,10 @@ $headingEpsilon:                13px;
 $headingZeta:                   11px;
 
 /* Links  */
-$linkColor: $matrix;
-$linkVisited: lighten($linkColor, 10);
-$linkHover: darken($linkColor, 20);
-$linkActive: darken($linkColor, 20);
-$linkFocus: darken($linkColor, 40);
+$linkColour: $matrix;
+$linkVisited: lighten($linkColour, 10);
+$linkHover: darken($linkColour, 20);
+$linkActive: darken($linkColour, 20);
+$linkFocus: darken($linkColour, 40);
 
 $borderColour: $kabul;

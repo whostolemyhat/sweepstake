@@ -11,6 +11,9 @@ app.TeamCollectionView = Backbone.View.extend({
     },
 
     tableView: function() {
+        $('.view-controls .active').removeClass('active');
+        $('.table').addClass('active');
+
         this.render();
         this.addEvents();
     },
@@ -36,6 +39,8 @@ app.TeamCollectionView = Backbone.View.extend({
 
     renderGroups: function(e) {
         e.preventDefault();
+        $('.view-controls .active').removeClass('active');
+        $('.groups').addClass('active');
 
         $('.row-header').hide();
 

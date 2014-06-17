@@ -17,12 +17,28 @@ body {
 
 .view-controls {
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 1rem;;
     padding: 0;
     overflow: auto;
     text-align: center;
 
     li {
         display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 0.25rem 0.5rem;
+        background: $linkColour;
+        color: white;
+        border-radius: 3px;
+        text-decoration: none;
+        @include transition(all, 0.2s, ease-in-out);
+
+        &:hover,
+        &.active {
+            color: $linkColour;
+            background: white;
+        }
     }
 }
